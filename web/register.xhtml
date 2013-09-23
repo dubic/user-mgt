@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Register user</title>
+        <link rel="stylesheet" type="text/css" href="/user-mgt/css/theme1.css"></link>
+        <script type="text/javascript" src="/user-mgt/js/jquery-1.7.1.js"></script>
+    </h:head>
+    <h:body>
+        <div id="container">
+            <div id="content">
+                <div id="register_div" class="wrapper">
+                    <h:form>
+                        <table class="login" style="margin-left: auto; margin-right: auto;">
+                            <tbody>
+
+                                <tr>
+                                    <td><p class="mtop0 mbottom025"><strong><label for="fname">First Name</label></strong></p><h:inputText id="fname" value="#{userService.user.firstname}" class="inputtext"/></td>
+                                </tr>
+                                <tr>
+                                    <td><p class="mtop0 mbottom025"><strong><label for="lname">Last Name</label></strong></p><h:inputText id="lname" value="#{userService.user.lastname}" class="inputtext"/></td>
+                                </tr>
+                                <tr>
+                                    <td><p class="mtop0 mbottom025"><strong><label for="oname">Other name</label></strong></p><h:inputText id="oname" value="#{userService.user.othername}" class="inputtext"/></td>
+                                </tr>
+                                <tr>
+                                    <td><p class="mtop0 mbottom025"><strong><label for="email">Email</label></strong></p><h:inputText id="email" value="#{userService.user.email}" class="inputtext"/></td>
+                                </tr>
+                                <tr>
+                                    <td><p class="mtop0 mbottom025"><strong><label for="pword">Password</label></strong></p><h:inputSecret id="pword" value="#{userService.user.password}" class="inputtext"/></td>
+                                </tr>
+                                <tr>
+                                    <td><p class="mtop0 mbottom025"><strong><label for="vpword">Verify password</label></strong></p><h:inputSecret id="vpword" value="#{userService.user.vpassword}" class="inputtext"/></td>
+                                </tr>
+
+
+                                <tr>
+                                    <td style="padding-top: 10px;"><h:commandButton class="public-button" action="#{userService.saveNewUser}" value="save"/>
+                                        <input class="public-button" type="submit" tabindex="4" value="cancel"/></td>
+                                </tr>
+                                <tr>
+                                    <td><p:messages id="reg_msg"/></td>
+                                </tr>
+                            </tbody></table>
+                    </h:form>
+
+                </div> <!-- wrapper -->
+            </div>
+        </div>
+    </h:body>
+</html>
+

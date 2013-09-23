@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Login to User mgt</title>
+        <link rel="stylesheet" type="text/css" href="/user-mgt/css/theme1.css"></link>
+        <script type="text/javascript" src="/user-mgt/js/jquery-1.7.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#register_div").hide();
+            });
+        </script>
+    </h:head>
+    <h:body>
+        <div id="header">
+            <div class="wrapper">
+                <h1 >Login to Dubic User MGT</h1>
+            </div>
+        </div>
+        <div id="container">
+            <div id="content">
+                <div id="login_div" class="wrapper">
+                    <form action="/user-mgt/j_spring_security_check" method="post">
+                        <table class="login" style="margin-left: auto; margin-right: auto;">
+                            <tbody><tr>
+                                    <td><p class="mtop0 mbottom025"><strong><label for="email">Username or email</label></strong></p><input id="email" tabindex="1" class="inputtext" type="text" name="email"/></td>
+                                </tr>
+                                <tr>
+                                    <td><p class="mtop05 mbottom025"><strong><label for="password">Password</label></strong></p><input tabindex="2" class="inputtext" type="password" name="password" id="password"/></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <p class="mtop025 mbottom0 smalltxt"><a href="https://www.survs.com/app/wa/Password/forgot">Forgot password?</a>
+                                            <span style="padding: 0 3px;">|</span> <a href="register.xhtml">Register</a>
+                                        </p></td> 
+                                </tr>
+                                <tr>
+                                    <td><p class="mtop025 mbottom0 smalltxt"><input type="checkbox" name="remember" id="rememberMe" tabindex="3"/> <label for="rememberMe">Remember me</label></p></td>
+                                </tr>
+
+
+                                <tr>
+                                    <td style="padding-top: 10px;"><input class="public-button" type="submit" tabindex="4" value="Log in"/></td>
+                                </tr>
+                            </tbody></table>
+                    </form>
+
+                </div> <!-- wrapper -->
+                
+            </div> <!-- content -->
+        </div>
+    </h:body>
+    <script>
+        Register = {
+//            show: function(){
+                $("#login_div").slideToggle(1000);
+                $("#register_div").slideToggle(1000);
+            }
+        }
+    </script>
+</html>
+

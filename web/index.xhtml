@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Users Page</title>
+        <link rel="stylesheet" type="text/css" href="/user-mgt/css/theme1.css"></link>
+        <script type="text/javascript" src="/user-mgt/js/jquery-1.7.1.js"></script>
+    </h:head>
+    
+    <h:body>
+        <div>
+            <ul class="navbar">
+                <li class="menu_right">
+                    <a href="#" class="dropshow">user name</a>
+                    <div class="dropdown_div" id="acc">
+                        <div>Log out</div>
+                        <div>My Account</div>
+                        <div>Credits</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <span class="linkbutton"><a href="register.xhtml">new user</a></span>
+        </div>
+        <ol class="dlist">
+            
+            <ui:repeat value="#{userService.userList}" var="user">
+                
+                <li>
+                    <div style="float:left; margin-right: 10px">
+                        <img src="images/01022011_002.jpg" width="80" height="100"/>
+                    </div>
+                    <div id="container_div" style="float:left; margin-top: auto; height: 100px">
+                        <div id="name_div">#{user.firstname} #{user.lastname}</div>
+                        <div id="email_div">#{user.email}</div>
+                        <div id="phone_div">#{user.phone}</div>
+                    </div>
+                    <div style="clear:both"/>
+                </li>
+            </ui:repeat>
+            
+        </ol>
+    </h:body>
+    <script>
+        $(".dropshow").click(function(){
+            $("#acc").css("visibility", "visible"); 
+//            $("#acc").css("top", "auto"); 
+        });
+    </script>
+</html>
+
